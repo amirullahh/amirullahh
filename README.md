@@ -2,7 +2,7 @@
 <h3 align="center">Informatics Engineering student pivoting into DevOps & Cloud Engineering</h3>
 
 <p align="center">
-  📍 Jakarta, Indonesia &nbsp;|&nbsp; 🎓 Informatics Engineering @ UBSI (GPA 3.90/4.00, exp. 2026) &nbsp;|&nbsp; 🟢 Open to DevOps / Cloud opportunities
+  📍 Jakarta, Indonesia &nbsp;|&nbsp; 🎓 Informatics Engineering @ UBSI &nbsp;|&nbsp; 🟢 Open to DevOps / Cloud opportunities
 </p>
 
 ###
@@ -22,15 +22,6 @@ I build with Python, AWS, and Docker — backed by AWS Academy Cloud Architectin
   <img src="https://img.shields.io/static/v1?message=MLflow&label=&color=0194E2&logoColor=white&style=for-the-badge" height="25" alt="mlflow badge" />
 </div>
 
-## 🚀 Featured Projects
-
-**Hirezy** — AI-powered recruitment platform (Dicoding capstone, 5-person team). Docker-based microservice stack: FastAPI + Vue 3 + MongoDB, with MLflow / Prometheus / Grafana for model monitoring and observability.
-
-**downloader.py** — Python automation tool wrapping yt-dlp for bulk video/subtitle downloads feeding a Whisper transcription pipeline.
-
-**Smart Recruit AI** — CPU-based recruitment assistant built with Python, Streamlit, scikit-learn, TF-IDF, and Sentence-BERT.
-
-> _Add a link to each repo once you drop the real repo names — happy to wire them in._
 
 ## 📊 GitHub Stats
 
