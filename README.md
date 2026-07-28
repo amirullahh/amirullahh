@@ -26,9 +26,11 @@ I build with Python, AWS, and Docker — backed by AWS Academy Cloud Architectin
 ## 📊 GitHub Stats
 
 <div align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=amirullahh&show_icons=true&theme=default&hide_border=true" height="165" alt="github stats" />
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=amirullahh&layout=compact&hide_border=true" height="165" alt="top languages" />
+  <img src="https://github-stats-extended.vercel.app/api?username=amirullahh&show_icons=true&theme=default&hide_border=true" height="165" alt="github stats" />
+  <img src="https://github-stats-extended.vercel.app/api/top-langs/?username=amirullahh&layout=compact&hide_border=true" height="165" alt="top languages" />
 </div>
+
+<!-- Self-hosting your own instance? Swap the domain above to your own Vercel URL — see the setup steps in chat. -->
 
 ## 🤝 Connect
 
