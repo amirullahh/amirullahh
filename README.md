@@ -1,48 +1,56 @@
-# Amirullah
+<h1 align="center">Hey 👋 I'm Amirullah</h1>
+<h3 align="center">Informatics Engineering student pivoting into DevOps & Cloud Engineering</h3>
 
-<h1 data-importer="text" align="center">Hey 👋What's Up?</h1>
+<p align="center">
+  📍 Jakarta, Indonesia &nbsp;|&nbsp; 🎓 Informatics Engineering @ UBSI (GPA 3.90/4.00, exp. 2026) &nbsp;|&nbsp; 🟢 Open to DevOps / Cloud opportunities
+</p>
 
 ###
 
-<div data-importer="techs" align="center">
-  <img src="https://skillicons.dev/icons?i=ts" height="60" alt="typescript logo"  />
-  <img width="12" />
-  <img src="https://skillicons.dev/icons?i=nextjs" height="60" alt="nextjs logo"  />
-  <img width="12" />
-  <img src="https://skillicons.dev/icons?i=tailwind" height="60" alt="tailwindcss logo"  />
-  <img width="12" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/storybook/storybook-original.svg" height="60" alt="storybook logo"  />
-  <img width="12" />
-  <img src="https://skillicons.dev/icons?i=graphql" height="60" alt="graphql logo"  />
-  <img width="12" />
-  <img src="https://skillicons.dev/icons?i=go" height="60" alt="go logo"  />
-  <img width="12" />
-  <img src="https://skillicons.dev/icons?i=rust" height="60" alt="rust logo"  />
-  <img width="12" />
-  <img src="https://skillicons.dev/icons?i=nestjs" height="60" alt="nestjs logo"  />
-  <img width="12" />
-  <img src="https://skillicons.dev/icons?i=py" height="60" alt="python logo"  />
-  <img width="12" />
-  <img src="https://skillicons.dev/icons?i=aws" height="60" alt="amazonwebservices logo"  />
+I build with Python, AWS, and Docker — backed by AWS Academy Cloud Architecting coursework and hands-on projects spanning cloud infra, automation, and applied NLP. Before tech, I spent 10+ years in sales & business development, which now shows up as a habit of clear documentation, steady delivery, and working well across teams under pressure.
+
+###
+
+<div align="center">
+  <img src="https://skillicons.dev/icons?i=aws,docker,py,bash,git,github,githubactions,linux,mongodb,vue,fastapi,grafana,prometheus" height="60" alt="tech stack icons"  />
 </div>
 
 ###
 
-<div data-importer="socials" align="center">
-  <img src="https://img.shields.io/static/v1?message=LinkedIn&logo=linkedin&label=&color=0077B5&logoColor=white&labelColor=&style=for-the-badge" height="25" alt="linkedin logo"  />
-  <img src="https://img.shields.io/static/v1?message=Twitter&logo=twitter&label=&color=1DA1F2&logoColor=white&labelColor=&style=for-the-badge" height="25" alt="twitter logo"  />
-  <img src="https://img.shields.io/static/v1?message=Discord&logo=discord&label=&color=7289DA&logoColor=white&labelColor=&style=for-the-badge" height="25" alt="discord logo"  />
-  <img src="https://img.shields.io/static/v1?message=Twitch&logo=twitch&label=&color=9146FF&logoColor=white&labelColor=&style=for-the-badge" height="25" alt="twitch logo"  />
-  <img src="https://img.shields.io/static/v1?message=dev.to&logo=dev.to&label=&color=0A0A0A&logoColor=white&labelColor=&style=for-the-badge" height="25" alt="devto logo"  />
+<div align="center">
+  <img src="https://img.shields.io/static/v1?message=AWS+Certified+Cloud+Practitioner&label=&color=FF9900&logoColor=white&style=for-the-badge" height="25" alt="aws certified cloud practitioner badge" />
+  <img src="https://img.shields.io/static/v1?message=MLflow&label=&color=0194E2&logoColor=white&style=for-the-badge" height="25" alt="mlflow badge" />
 </div>
 
-###
+## 🚀 Featured Projects
 
+**Hirezy** — AI-powered recruitment platform (Dicoding capstone, 5-person team). Docker-based microservice stack: FastAPI + Vue 3 + MongoDB, with MLflow / Prometheus / Grafana for model monitoring and observability.
+
+**downloader.py** — Python automation tool wrapping yt-dlp for bulk video/subtitle downloads feeding a Whisper transcription pipeline.
+
+**Smart Recruit AI** — CPU-based recruitment assistant built with Python, Streamlit, scikit-learn, TF-IDF, and Sentence-BERT.
+
+> _Add a link to each repo once you drop the real repo names — happy to wire them in._
+
+## 📊 GitHub Stats
+
+<div align="center">
+  <img src="https://github-readme-stats.vercel.app/api?username=amirullahh&show_icons=true&theme=default&hide_border=true" height="165" alt="github stats" />
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=amirullahh&layout=compact&hide_border=true" height="165" alt="top languages" />
+</div>
+
+## 🤝 Connect
+
+<div align="center">
+  <a href="https://www.linkedin.com/in/amir-399b0057/"><img src="https://img.shields.io/static/v1?message=LinkedIn&logo=linkedin&label=&color=0077B5&logoColor=white&labelColor=&style=for-the-badge" height="25" alt="linkedin logo" /></a>
+  <a href="mailto:amirullahhidayat12@gmail.com"><img src="https://img.shields.io/static/v1?message=Email&logo=gmail&label=&color=D14836&logoColor=white&labelColor=&style=for-the-badge" height="25" alt="email" /></a>
+</div>
+
+<p align="center">🔖 <a href="https://www.credly.com/users/amirullah-hidayat.86abc225">Certification badges on Credly</a></p>
+
+###
 <!--START_SECTION:activity-->
-
 ## Automated activity
-
 - Last updated: 2026-07-28T02:09:15.211Z
 - Activity token: **995330**
-
 <!--END_SECTION:activity-->
