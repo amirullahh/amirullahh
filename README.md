@@ -1,52 +1,46 @@
-<h1 align="center">Hey 👋 I'm Amirullah</h1>
-<h3 align="center">Informatics Engineering student pivoting into DevOps & Cloud Engineering</h3>
+<!-- Animated cards are built by scripts/build_svgs.py. After editing an SVG, bump ?v= below (GitHub caches images hard). -->
 
 <p align="center">
-  📍 Jakarta, Indonesia &nbsp;|&nbsp; 🎓 Informatics Engineering @ UBSI &nbsp;|&nbsp; 🟢 Open to DevOps / Cloud opportunities
+  <img src="./hero.svg?v=1" width="100%" alt="Amirullah Hidayat — DevOps & Cloud Engineer. Open to DevOps / Cloud roles. Based in Jakarta." />
 </p>
 
-###
+<p align="center">
+  <img src="./about.svg?v=1" width="100%" alt="What I build: cloud infrastructure, CI/CD & automation, MLOps. Journey: AWS Certified Cloud Practitioner, AWS Academy Cloud Architecting, CI/CD for ML, 10+ years in sales & BizDev." />
+</p>
 
-I build with Python, AWS, and Docker — backed by AWS Academy Cloud Architecting coursework and hands-on projects spanning cloud infra, automation, and applied NLP. Before tech, I spent 10+ years in sales & business development, which now shows up as a habit of clear documentation, steady delivery, and working well across teams under pressure.
+<p align="center">
+  <img src="./stack.svg?v=1" width="100%" alt="Tech stack: AWS, Google Cloud, Huawei Cloud, Linux, Docker, GitHub Actions, Git, Bash, MongoDB, Prometheus, Grafana, Python, FastAPI, MLflow, Node.js, Vue" />
+</p>
 
-###
+<p align="center">
+  <img src="./id-dashboard.svg?v=1" width="100%" alt="ID badge and dashboard: 30+ public repos, 10+ years in sales & BD, 3 clouds explored, 8 languages used" />
+</p>
 
-<div align="center">
-  <img src="https://skillicons.dev/icons?i=aws,docker,py,bash,git,github,githubactions,linux,mongodb,vue,fastapi,grafana,prometheus" height="60" alt="tech stack icons"  />
-</div>
+## 🛠️ Featured projects
 
-###
+| Project | What it does | Stack |
+| --- | --- | --- |
+| [**Workflow-CI-V1**](https://github.com/amirullahh/Workflow-CI-V1) | CI/CD pipeline that trains, tracks and packages a House Prices ML model | GitHub Actions · MLflow · Python |
+| [**hello-cloudbuild-app**](https://github.com/amirullahh/hello-cloudbuild-app) · [**env**](https://github.com/amirullahh/hello-cloudbuild-env) | GitOps-style CI/CD with separate app and environment repos | Google Cloud Build · Docker |
+| [**cloudrun-progression**](https://github.com/amirullahh/cloudrun-progression) | Progressive rollouts of a containerised service on Cloud Run | Cloud Run · Docker |
+| [**HCCDP-Cloud-Migration**](https://github.com/amirullahh/HCCDP-Cloud-Migration) | Cloud migration project from the Huawei Cloud developer track | Huawei Cloud · TypeScript |
+| [**SmartRecruit_AI_V2**](https://github.com/amirullahh/SmartRecruit_AI_V2) | Applied NLP for screening and matching candidates | Python · NLP · Jupyter |
+| [**openmusic-api-v2**](https://github.com/amirullahh/openmusic-api-v2) | RESTful music API with authentication and playlists | Node.js · REST |
 
-<div align="center">
-  <img src="https://img.shields.io/static/v1?message=AWS+Certified+Cloud+Practitioner&label=&color=FF9900&logoColor=white&style=for-the-badge" height="25" alt="aws certified cloud practitioner badge" />
-  <img src="https://img.shields.io/static/v1?message=MLflow&label=&color=0194E2&logoColor=white&style=for-the-badge" height="25" alt="mlflow badge" />
-</div>
+## 🏙️ Contribution city
 
+<p align="center">
+  <img src="./profile-3d-contrib/profile-night-view.svg" width="100%" alt="3D contribution graph rendered as a city at night" />
+</p>
 
-## 📊 GitHub Stats
+## 🤝 Let's connect
 
-<div align="center">
-  <img src="https://github-stats-extended.vercel.app/api?username=amirullahh&show_icons=true&theme=default&hide_border=true" height="165" alt="github stats" />
-  <img src="https://github-stats-extended.vercel.app/api/top-langs/?username=amirullahh&layout=compact&hide_border=true" height="165" alt="top languages" />
-</div>
+<p align="center">
+  <img src="./connect.svg?v=1" width="100%" alt="Connect: LinkedIn, Email, Credly" />
+</p>
 
-<!-- Self-hosting your own instance? Swap the domain above to your own Vercel URL — see the setup steps in chat. -->
-
-## 🤝 Connect
-
-<div align="center">
-  <a href="https://www.linkedin.com/in/amir-399b0057/"><img src="https://img.shields.io/static/v1?message=LinkedIn&logo=linkedin&label=&color=0077B5&logoColor=white&labelColor=&style=for-the-badge" height="25" alt="linkedin logo" /></a>
-  <a href="mailto:amirullahhidayat12@gmail.com"><img src="https://img.shields.io/static/v1?message=Email&logo=gmail&label=&color=D14836&logoColor=white&labelColor=&style=for-the-badge" height="25" alt="email" /></a>
-</div>
-
-<p align="center">🔖 <a href="https://www.credly.com/users/amirullah-hidayat.86abc225">Certification badges on Credly</a></p>
-
-###
-<!--START_SECTION:activity-->
-
-## Automated activity
-
-- Last updated: 2026-11-04T04:12:13.975Z
-- Activity token: **850841**
-
-<!--END_SECTION:activity-->
+<p align="center">
+  <a href="https://www.linkedin.com/in/amir-399b0057/"><img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" /></a>
+  <a href="mailto:amirullahhidayat12@gmail.com"><img src="https://img.shields.io/badge/Email-EA4335?style=for-the-badge&logo=gmail&logoColor=white" alt="Email" /></a>
+  <a href="https://www.credly.com/users/amirullah-hidayat.86abc225"><img src="https://img.shields.io/badge/Credly-FF6B00?style=for-the-badge&logo=credly&logoColor=white" alt="Credly badges" /></a>
+</p>
