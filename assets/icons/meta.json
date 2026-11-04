@@ -1,0 +1,86 @@
+{
+ "amazonwebservices": {
+  "title": "Amazon Web Services",
+  "hex": "232F3E"
+ },
+ "credly": {
+  "title": "Credly",
+  "hex": "FF6B00"
+ },
+ "docker": {
+  "title": "Docker",
+  "hex": "2496ED"
+ },
+ "fastapi": {
+  "title": "FastAPI",
+  "hex": "009688"
+ },
+ "git": {
+  "title": "Git",
+  "hex": "F05032"
+ },
+ "github": {
+  "title": "GitHub",
+  "hex": "181717"
+ },
+ "githubactions": {
+  "title": "GitHub Actions",
+  "hex": "2088FF"
+ },
+ "gmail": {
+  "title": "Gmail",
+  "hex": "EA4335"
+ },
+ "gnubash": {
+  "title": "GNU Bash",
+  "hex": "4EAA25"
+ },
+ "googlecloud": {
+  "title": "Google Cloud",
+  "hex": "4285F4"
+ },
+ "grafana": {
+  "title": "Grafana",
+  "hex": "F46800"
+ },
+ "huawei": {
+  "title": "Huawei",
+  "hex": "FF0000"
+ },
+ "linkedin": {
+  "title": "LinkedIn",
+  "hex": "0A66C2"
+ },
+ "linux": {
+  "title": "Linux",
+  "hex": "FCC624"
+ },
+ "mlflow": {
+  "title": "MLflow",
+  "hex": "0194E2"
+ },
+ "mongodb": {
+  "title": "MongoDB",
+  "hex": "47A248"
+ },
+ "nodedotjs": {
+  "title": "Node.js",
+  "hex": "5FA04E"
+ },
+ "prometheus": {
+  "title": "Prometheus",
+  "hex": "E6522C"
+ },
+ "python": {
+  "title": "Python",
+  "hex": "3776AB"
+ },
+ "typescript": {
+  "title": "TypeScript",
+  "hex": "3178C6"
+ },
+ "vuedotjs": {
+  "title": "Vue.js",
+  "hex": "4FC08D"
+ }
+}
