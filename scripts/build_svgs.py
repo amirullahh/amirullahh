@@ -190,6 +190,10 @@ def build_hero():
   <stop offset="0" stop-color="{CYAN}" stop-opacity="0"/><stop offset="1" stop-color="{CYAN}" stop-opacity=".18"/>
 </linearGradient>
 <clipPath id="{p}vf"><rect x="622" y="34" width="346" height="312" rx="14"/></clipPath>
+<radialGradient id="{p}vgrad" cx=".5" cy=".5" r=".5">
+  <stop offset=".62" stop-color="#fff"/><stop offset="1" stop-color="#fff" stop-opacity="0"/>
+</radialGradient>
+<mask id="{p}vmask" maskUnits="userSpaceOnUse" x="622" y="34" width="346" height="312"><rect x="645" y="40" width="300" height="300" fill="url(#{p}vgrad)"/></mask>
 """
     b = [f'<rect width="{W}" height="{H}" rx="22" fill="{BG}"/>',
          f'<rect width="{W}" height="{H}" rx="22" fill="url(#{p}dots)"/>',
@@ -259,7 +263,7 @@ def build_hero():
 
     # viewfinder (right)
     vx, vy, vw, vh = 622, 34, 346, 312
-    b.append(f'<rect x="{vx}" y="{vy}" width="{vw}" height="{vh}" rx="14" fill="#090a12" fill-opacity=".85"/>')
+    b.append(f'<rect x="{vx}" y="{vy}" width="{vw}" height="{vh}" rx="14" fill="#0d0e16"/>')
     b.append(f'<rect x="{vx}" y="{vy}" width="{vw}" height="{vh}" rx="14" fill="url(#{p}dots)"/>')
     # scanner line
     b.append(f"""<g clip-path="url(#{p}vf)"><rect x="{vx}" y="{vy - 60}" width="{vw}" height="60" fill="url(#{p}scan)">
@@ -279,33 +283,42 @@ def build_hero():
     # REC + filename
     b.append(f"""<circle cx="{vx + 24}" cy="{vy + 26}" r="5" fill="#ef4444"><animate attributeName="opacity" values="1;1;.15;.15" keyTimes="0;.5;.5;1" dur="1.2s" begin="0s" repeatCount="indefinite"/></circle>
 <text x="{vx + 36}" y="{vy + 30}" class="m" font-size="11" font-weight="700" fill="{TEXT}" letter-spacing="1">REC</text>
-<text x="{vx + vw - 20}" y="{vy + 30}" text-anchor="end" class="m" font-size="11" fill="{DIM}">deploy_pipeline.log</text>""")
+<text x="{vx + vw - 20}" y="{vy + 30}" text-anchor="end" class="m" font-size="11" fill="{DIM}">cloud_sage.mp4</text>""")
 
-    # terminal log
-    lines = [
-        (DIM, "$", TEXT, "git push origin main"),
-        (CYAN, "[run ]", TEXT, "GitHub Actions: build + test"),
-        (CYAN, "[run ]", TEXT, "docker build -t api:1.4.2 ."),
-        (GREEN, "[ ok ]", TEXT, "image pushed to Amazon ECR"),
-        (CYAN, "[run ]", TEXT, "rolling deploy -> ECS service"),
-        (GREEN, "[ ok ]", TEXT, "health check 200 · 3/3 tasks"),
-        (GREEN, "[ ok ]", VIOLET, "deployed in 2m 41s"),
-    ]
-    LOOP = 8.0
-    for i, (tc, tag, c, t) in enumerate(lines):
-        k = 0.06 + i * 0.085
-        y = vy + 70 + i * 30
-        b.append(f'<g><animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;{k:.3f};{k + 0.015:.3f};.88;.95;1" dur="{LOOP}s" begin="0s" repeatCount="indefinite"/>'
-                 f'<text x="{vx + 24}" y="{y}" class="m" font-size="12.5"><tspan fill="{tc}" font-weight="700">{esc(tag)}</tspan>'
-                 f'<tspan fill="{c}"> {esc(t)}</tspan></text></g>')
-    cy_ = vy + 70 + len(lines) * 30 - 12
-    b.append(f'<rect x="{vx + 24}" y="{cy_}" width="8" height="15" fill="{CYAN}"><animate attributeName="opacity" values="1;0;1" dur="1s" begin="0s" repeatCount="indefinite"/></rect>')
-    # scrubber
+    # character clip (rendered with Remotion in video/, frames at 15 fps)
+    frames = sorted((ASSETS / "character" / "frames").glob("*.jpg"))
+    FPS = 15
+    play = len(frames) / FPS          # 2.0s
+    LOOP = 4.0                        # play once, hold last frame ~1.4s, fade, repeat
+    hold_end = (play + 1.4) / LOOP
+    ix, iy, isz = vx + (vw - 300) / 2, vy + 6, 300
+    imgs = []
+    for i, fr in enumerate(frames):
+        a = i / FPS / LOOP
+        bnd = (i + 1) / FPS / LOOP
+        last = i == len(frames) - 1
+        if last:
+            anim = (f'<animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;{a - 0.0005:.4f};{a:.4f};{hold_end:.4f};1" '
+                    f'dur="{LOOP}s" begin="0s" repeatCount="indefinite"/>')
+        elif i == 0:
+            anim = (f'<animate attributeName="opacity" values="1;0" keyTimes="0;{bnd:.4f}" calcMode="discrete" '
+                    f'dur="{LOOP}s" begin="0s" repeatCount="indefinite"/>')
+        else:
+            anim = (f'<animate attributeName="opacity" values="0;1;0" keyTimes="0;{a:.4f};{bnd:.4f}" calcMode="discrete" '
+                    f'dur="{LOOP}s" begin="0s" repeatCount="indefinite"/>')
+        imgs.append(f'<image href="data:image/jpeg;base64,{b64(fr)}" x="{ix:.0f}" y="{iy}" width="{isz}" height="{isz}" '
+                    f'opacity="{1 if last else 0}">{anim}</image>')
+    b.append(f'<g mask="url(#{p}vmask)">' + "".join(imgs) + "</g>")
+    # caption chip
+    b.append(f'<rect x="{vx + 20}" y="{vy + vh - 62}" width="176" height="24" rx="12" fill="#090a12" fill-opacity=".8" stroke="{LINE}"/>'
+             f'<circle cx="{vx + 34}" cy="{vy + vh - 50}" r="3.5" fill="{GREEN}"/>'
+             f'<text x="{vx + 44}" y="{vy + vh - 46}" class="m" font-size="11" fill="{TEXT}">cloud sage: online</text>')
+    # scrubber synced to the loop
     sx, sy, sw = vx + 24, vy + vh - 26, vw - 100
     b.append(f"""<rect x="{sx}" y="{sy}" width="{sw}" height="4" rx="2" fill="{LINE}"/>
 <rect x="{sx}" y="{sy}" width="{sw}" height="4" rx="2" fill="url(#{p}aur)"><animate attributeName="width" values="0;{sw}" dur="{LOOP}s" begin="0s" repeatCount="indefinite"/></rect>
 <circle cx="{sx + sw}" cy="{sy + 2}" r="5" fill="{TEXT}"><animate attributeName="cx" values="{sx};{sx + sw}" dur="{LOOP}s" begin="0s" repeatCount="indefinite"/></circle>
-<text x="{vx + vw - 20}" y="{sy + 6}" text-anchor="end" class="m" font-size="11" fill="{DIM}">00:08</text>""")
+<text x="{vx + vw - 20}" y="{sy + 6}" text-anchor="end" class="m" font-size="11" fill="{DIM}">00:04</text>""")
 
     return svg_doc(W, H, f"{name} — DevOps & Cloud Engineer", defs, "\n".join(b))
 
@@ -584,15 +597,9 @@ def build_id_dashboard():
     badge.append(f'<rect x="166" y="144" width="28" height="7" rx="3.5" fill="{BG}" stroke="{LINE}"/>')
     badge.append(f'<text x="80" y="178" class="m" font-size="9.5" font-weight="700" fill="{CYAN}" letter-spacing="2">ID · CLOUD OPS</text>')
     badge.append(f'<text x="280" y="178" text-anchor="end" class="m" font-size="9.5" fill="{DIM}">No. 0399</text>')
-    # avatar (abstract portrait + monogram)
+    # avatar: Cloud Sage portrait (rendered with Remotion)
     badge.append(f'<g clip-path="url(#{p}avclip)"><rect x="122" y="196" width="116" height="116" fill="url(#{p}avbg)"/>'
-                 f'<circle cx="180" cy="242" r="24" fill="#c9a27e"/>'
-                 f'<path d="M154 236c0-22 14-32 28-32s26 10 26 30c-6-8-16-12-30-12s-18 6-24 14z" fill="#1b1b24"/>'
-                 f'<rect x="162" y="232" width="16" height="9" rx="3" fill="none" stroke="#1b1b24" stroke-width="2.5"/>'
-                 f'<rect x="182" y="232" width="16" height="9" rx="3" fill="none" stroke="#1b1b24" stroke-width="2.5"/>'
-                 f'<path d="M178 236h4" stroke="#1b1b24" stroke-width="2"/>'
-                 f'<path d="M136 312c4-28 22-42 44-42s40 14 44 42z" fill="#e8eaf4"/>'
-                 f'<path d="M168 272l12 14 12-14" fill="none" stroke="{GOLD}" stroke-width="3"/></g>')
+                 f'<image href="data:image/png;base64,{b64(ASSETS / "character" / "portrait.png")}" x="68" y="160" width="224" height="224"/></g>')
     badge.append(f'<rect x="122" y="196" width="116" height="116" rx="16" fill="none" stroke="{LINE}" stroke-width="2"/>')
     badge.append(f'<rect x="122" y="196" width="116" height="116" rx="16" fill="none" stroke="url(#{p}aur)" stroke-width="2.5" '
                  f'stroke-linecap="round" pathLength="100" stroke-dasharray="18 82">'
@@ -686,25 +693,15 @@ def build_connect():
     W, H = 1000, 250
     defs = common_defs(p)
     b = [card(p, 0, 0, W, H)]
-    # terminal
-    tx, ty, tw, th = 24, 24, 380, 202
-    b.append(f'<rect x="{tx}" y="{ty}" width="{tw}" height="{th}" rx="12" fill="#0a0b13" stroke="{LINE}"/>')
-    for i, c in enumerate(["#f87171", "#fbbf24", "#34d399"]):
-        b.append(f'<circle cx="{tx + 18 + i * 14}" cy="{ty + 17}" r="4" fill="{c}"/>')
-    b.append(f'<text x="{tx + tw / 2}" y="{ty + 21}" text-anchor="middle" class="m" font-size="10.5" fill="{DIM}">~/connect</text>')
-    lines = [
-        (f'<tspan fill="{GREEN}">$</tspan> whoami', 0.2),
-        (f'<tspan fill="{TEXT}">amirullah — devops &amp; cloud</tspan>', 0.5),
-        (f'<tspan fill="{GREEN}">$</tspan> ping amirullah', 0.9),
-        (f'<tspan fill="{MUTED}">reply: usually within </tspan><tspan fill="{CYAN}">24h</tspan>', 1.2),
-        (f'<tspan fill="{GREEN}">$</tspan> ./say-hi.sh <tspan fill="{VIOLET}">--channel</tspan>', 1.6),
-    ]
-    for i, (t, d) in enumerate(lines):
-        b.append(f'<g>{fade_in(d, 0.25)}<text x="{tx + 20}" y="{ty + 56 + i * 27}" class="m" font-size="13" fill="{TEXT}">{t}</text></g>')
-    b.append(f'<rect x="{tx + 268}" y="{ty + 56 + 4 * 27 - 12}" width="8" height="15" fill="{CYAN}"><animate attributeName="opacity" values="1;0;1" dur="1s" begin="0s" repeatCount="indefinite"/></rect>')
+    # pointing character (rendered with Remotion)
+    b.append(f'<g>{fade_in(0.1, 0.6, dy=12)}<image href="data:image/png;base64,{b64(ASSETS / "character" / "point.png")}" '
+             f'x="20" y="6" width="244" height="244"/></g>')
+    b.append(f'<text x="282" y="104" class="d" font-size="22" font-weight="700" fill="{TEXT}">Let\'s build</text>'
+             f'<text x="282" y="130" class="d" font-size="22" font-weight="700" fill="url(#{p}aur)">something cool</text>'
+             f'<text x="282" y="156" class="m" font-size="11" fill="{MUTED}">reply within 24h</text>')
     # pointing arrow
     b.append(f'<g><animateTransform attributeName="transform" type="translate" values="0 0;8 0;0 0" dur="1.4s" begin="0s" repeatCount="indefinite"/>'
-             f'<path d="M418 125h30m-10 -10l10 10-10 10" fill="none" stroke="url(#{p}aur)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></g>')
+             f'<path d="M402 152h26m-8 -8l8 8-8 8" fill="none" stroke="url(#{p}aur)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></g>')
     # link cards
     links = [("linkedin", "LinkedIn", "in/amir-399b0057"), ("gmail", "Email", "amirullahhidayat12"), ("credly", "Credly", "AWS badges")]
     cx = 470

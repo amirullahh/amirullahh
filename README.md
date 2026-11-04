@@ -1,7 +1,7 @@
 <!-- Animated cards are built by scripts/build_svgs.py. After editing an SVG, bump ?v= below (GitHub caches images hard). -->
 
 <p align="center">
-  <img src="./hero.svg?v=1" width="100%" alt="Amirullah Hidayat — DevOps & Cloud Engineer. Open to DevOps / Cloud roles. Based in Jakarta." />
+  <img src="./hero.svg?v=2" width="100%" alt="Amirullah Hidayat — DevOps & Cloud Engineer. Open to DevOps / Cloud roles. Based in Jakarta." />
 </p>
 
 <p align="center">
@@ -13,7 +13,7 @@
 </p>
 
 <p align="center">
-  <img src="./id-dashboard.svg?v=1" width="100%" alt="ID badge and dashboard: 30+ public repos, 10+ years in sales & BD, 3 clouds explored, 8 languages used" />
+  <img src="./id-dashboard.svg?v=2" width="100%" alt="ID badge and dashboard: 30+ public repos, 10+ years in sales & BD, 3 clouds explored, 8 languages used" />
 </p>
 
 ## 🛠️ Featured projects
@@ -36,7 +36,7 @@
 ## 🤝 Let's connect
 
 <p align="center">
-  <img src="./connect.svg?v=1" width="100%" alt="Connect: LinkedIn, Email, Credly" />
+  <img src="./connect.svg?v=2" width="100%" alt="Connect: LinkedIn, Email, Credly" />
 </p>
 
 <p align="center">
